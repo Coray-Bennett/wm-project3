@@ -1,0 +1,121 @@
+
+body {
+    background: rgb(32, 31, 31);
+    font-family:'Tahoma', sans-serif;
+    color: rgb(245, 245, 245);
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    width: 100%;
+}
+
+canvas {
+    background: rgb(196, 196, 196);
+    border: 1px solid black;
+    max-width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background:rgb(52, 0, 59);
+    margin: 5%;
+    padding-bottom: 5%;
+    border: solid 3px black;
+}
+
+.invis-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+    .invis-container {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+}
+
+.game-button {
+    background: rgb(112, 0, 0);
+    color: rgb(245, 245, 245);
+    font: inherit;
+    font-size: 30px;
+    float: left;
+    margin: 15px;
+    max-width: 25%;
+    max-height: 3em;
+    text-align: center;
+    border: solid 1px black;
+    transition-duration: 0.2s;
+}
+
+@media screen and (max-width: 768px) {
+    .game-button {
+        display: none;
+    }
+}
+
+
+.game-button:hover {
+    background: rgb(0, 0, 0);
+}
+
+.captioned-image {
+    max-width: 33%;
+}
+
+@media screen and (max-width: 768px) {
+    .captioned-image {
+        max-width: 95%;
+    }
+}
+
+.caption {
+    text-align: center;
+    font-weight: bold;
+    font-size: 133%;
+    max-width: 100%;
+}
+
+.c-image {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.description {
+    font-size: 1.2em;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 2.5%;
+}
+
+.description-2 {
+    font-size: 1.2em;
+    text-align: left;
+    max-width: 50%;
+    margin-left: 2.5%;
+}
+
+.g-image {
+    max-width: 100%;
+    float: left;
+    margin-bottom: 5%;
+}
+
+.spray-pattern {
+    width: 50%;
+}
