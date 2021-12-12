@@ -1,4 +1,4 @@
-const START_GAME_SPEED = 1000;
+const START_GAME_SPEED = 1000; //these constants determine how easy/hard the game is to start
 const START_CIRCLE_SPEED = 0.5;
 
 
@@ -10,7 +10,7 @@ var gameOver2 = false;
 var score = 0;
 var nextScore = 10;
 
-var gameArea2 = {
+var gameArea2 = { //separate gameArea variable from the other script
     canvas: document.createElement("canvas"),
     start: function() {
         this.canvas.width = 800;
@@ -34,7 +34,7 @@ var gameArea2 = {
     }
 }
 
-function target(x, y) {
+function target(x, y) { //circles to be clicked
     this.x = x;
     this.y = y;
     this.exists = true;
@@ -73,14 +73,15 @@ function target(x, y) {
 }
 
 
-function randomTarget() {
+function randomTarget() { //creates a target within the canvas coordinates (does not place them partially offscreen)
     var rX = Math.floor((gameArea2.canvas.width-100) * Math.random()) + 50;
     var rY = Math.floor((gameArea2.canvas.height-100) * Math.random()) + 50;
     targets.push(new target(rX, rY));
 }
 
-var createTarget;
-function startGame2(){
+var createTarget; //these random globals are all over my code but I'm kinda scared to change them if it messes something up
+
+function startGame2(){ 
     gameArea2.end();
     gameSpeed = START_GAME_SPEED;
     circleSpeed = START_CIRCLE_SPEED;
@@ -94,7 +95,7 @@ function startGame2(){
     updateGameSpeed();
 }
 
-function updateGameSpeed() {
+function updateGameSpeed() { // creates a new interval to create targets 
     clearInterval(createTarget);
     createTarget = setInterval(randomTarget, gameSpeed);
 }
@@ -119,8 +120,8 @@ function updateGameArea2() {
         try{
             t.update();
             if(!(t.exists) && !(t.clicked) && !(t.missCounted)) {
-                deadTargets.push(t);
-                t.missCounted = true;
+                deadTargets.push(t); // keeps track of which targets you missed
+                t.missCounted = true; //only counts the missed targets once
             }
         }
         catch(e) {
@@ -136,7 +137,7 @@ function updateGameArea2() {
     }
 }
 
-function gameIsOver() {
+function gameIsOver() { //displays your score at the end
     gameArea2.clear();
     var ctx = gameArea2.context;
     ctx.font = '50px sans-serif';
@@ -149,7 +150,7 @@ function gameIsOver() {
     gameArea2.end();
 }
 
-function distance(x1, y1, x2, y2) {
+function distance(x1, y1, x2, y2) { //used to tell if you clicked within a circle
     return Math.sqrt( ((x2-x1)**2 + (y2-y1)**2) )
 }
 

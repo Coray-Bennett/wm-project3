@@ -3,7 +3,7 @@ const RIGHT = 1;
 const WRONG = 2;
 
 
-var gameArea1 = {
+var gameArea1 = { //creates the canvas and update timer
     canvas: document.createElement("canvas"),
     start: function() {
         this.canvas.width = 500;
@@ -29,7 +29,7 @@ var gameArea1 = {
 }
 
 
-function component(x, y, key, keyCode) {
+function component(x, y, key, keyCode) { // a key input displayed on screen
     this.x = x;
     this.y = y;
     this.width = 100;
@@ -76,7 +76,7 @@ var currentKey;
 function startGame1() {
     gameArea1.end();
     try{
-        clearTimeout(noInput);
+        clearTimeout(noInput); // when the game starts, it clears the timer that determines whether you inputted successfully
     }
     catch(e) {
         if(e instanceof TypeError) {}
@@ -88,7 +88,7 @@ function startGame1() {
     keys = [];
     gameOver = false;
     currentKey = 0;
-    var keyset = {
+    var keyset = { //all the keys used in the game, the key letter paired with it's code
         "W": "KeyW",
         "A": "KeyA",
         "S": "KeyS",
@@ -121,13 +121,13 @@ function startGame1() {
 var correctKey, keyPressed;
 var waitForNext = true;
 
-function updateGameArea1() {
+function updateGameArea1() { //this function is called in 20ms intervals when the game area is active
     gameArea1.clear();
     correctKey = keys[currentKey].keyCode;
 
     keyPressed = gameArea1.key;
 
-    if(keyPressed == false){
+    if(keyPressed == false){ // waitForNext allows me to check if each key is being pressed in the correct order
         waitForNext = true;
     }
 

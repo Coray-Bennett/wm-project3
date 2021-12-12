@@ -144,6 +144,7 @@ canvas {
 .reslink {
     position: relative; 
     text-align: center; 
+    margin-bottom: 5%;
 }
 
 #game {
