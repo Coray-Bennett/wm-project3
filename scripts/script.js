@@ -114,7 +114,7 @@ function startGame1() {
         }
         keys.push(new component(x, y, keyArray[index], valueArray[index]))
     }
-    noInput = setTimeout(setWrong, 2250);
+    noInput = setTimeout(setWrong, 2000);
 }
 
 
@@ -169,3 +169,4 @@ function setWrong() {
     }
     gameOver = true;
 }
+

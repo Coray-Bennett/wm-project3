@@ -104,6 +104,7 @@ function updateGameArea2() {
 
     var ctx = gameArea2.context;
     ctx.font = '25px sans-serif';
+    ctx.fillStyle = "black";
     ctx.fillText("Score: " + String(score), 20, 30, 300);
     ctx.fillText("Misses: " + String(deadTargets.length) + "/3", 20, 60, 300);
 
@@ -151,3 +152,4 @@ function gameIsOver() {
 function distance(x1, y1, x2, y2) {
     return Math.sqrt( ((x2-x1)**2 + (y2-y1)**2) )
 }
+
