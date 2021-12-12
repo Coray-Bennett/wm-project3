@@ -5,11 +5,12 @@
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="assets/styles/styles.css"> 
-        <script src="script.js"></script>
+        <script src="scripts/script.js"></script>
+        <script src="scripts/script2.js"></script> 
     </head>
     <body>
         
-        <h1>ESPORTS ARE LEGIT</h1>
+        <h1>ESPORTS</h1>
 
         <div class="container">
     
@@ -64,9 +65,17 @@
                 Please note: This will only work with a keyboard, not on mobile. 
             </p>
             
-            <button class ="game-button" onclick="startGame1()">TEST OF SKILL</button>
+            <button class ="game-button desktop-only" onclick="startGame1()">TEST OF SKILL</button>
             <div id="game"></div>
         </div>
 
+        <div class="container">
+            <h1 style="width:100%">Another Test</h1>
+            <p class="description">This test tracks your aim AND reaction time. Click the circles before they vanish, and try to get a high score. The game gets harder over time!</p>
+            <button class = "game-button" onclick="startGame2()">AIM TEST</button>
+            <div class="game-container">
+                <div id="aim"></div>
+            </div>
+        </div>
     </body>
 </html>

@@ -60,8 +60,12 @@ canvas {
     transition-duration: 0.2s;
 }
 
-@media screen and (max-width: 768px) {
-    .game-button {
+.desktop-only {
+    display: inline-block;
+}
+
+@media screen and (max-width: 800px) {
+    .desktop-only {
         display: none;
     }
 }
@@ -118,4 +122,13 @@ canvas {
 
 .spray-pattern {
     width: 50%;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+}
+
+#aim {
+    width: 100%;
 }

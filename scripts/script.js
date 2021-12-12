@@ -10,8 +10,8 @@ var gameArea1 = {
         this.canvas.height = 400;
         this.key = false;
         this.context = this.canvas.getContext("2d");
-        var div = document.getElementById("game");
-        div.appendChild(this.canvas);
+        this.div = document.getElementById("game");
+        this.div.appendChild(this.canvas);
         this.interval = setInterval(updateGameArea1, 20);
         window.addEventListener('keydown', function(e) {
             gameArea1.key = e.code;
@@ -27,6 +27,7 @@ var gameArea1 = {
         clearInterval(this.interval);
     }
 }
+
 
 function component(x, y, key, keyCode) {
     this.x = x;
@@ -73,6 +74,16 @@ var gameOver;
 var currentKey;
 
 function startGame1() {
+    gameArea1.end();
+    try{
+        clearTimeout(noInput);
+    }
+    catch(e) {
+        if(e instanceof TypeError) {}
+            else {
+                console.error(e);
+            }
+    }
     gameArea1.start();
     keys = [];
     gameOver = false;
@@ -111,9 +122,6 @@ var correctKey, keyPressed;
 var waitForNext = true;
 
 function updateGameArea1() {
-    if(gameArea1.interval == 1){
-        gameArea1.interval = setInterval(updateGameArea1, 20);
-    }
     gameArea1.clear();
     correctKey = keys[currentKey].keyCode;
 
@@ -149,8 +157,7 @@ function updateGameArea1() {
         else{
             ctx.fillText("FAILURE", 150, 370);
         }
-        clearInterval(gameArea1.interval);
-
+        gameArea1.end();
     }
 }
 
